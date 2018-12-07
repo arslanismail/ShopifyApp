@@ -62,6 +62,7 @@
             <div class="links">
                 <a href="{{route('addform')}}">Add Product</a>
                 <a href="{{route('showproducts')}}">Store</a>
+                <a href="{{route('showscript')}}">Add Js</a>
 
             </div>
         </div>

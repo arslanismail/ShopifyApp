@@ -52,15 +52,13 @@
 @section('content')
 
                 <ul class="list-group list-group-flush">
-
                     @foreach($products as $product)
-
                         <li class="list-group-item">{{$product->title}}</li>
                     @endforeach
-
                 </ul>
 
             <div class="links">
+
                 <a href="{{route('addform')}}">Add Product</a>
                 <a href="{{route('showproducts')}}">Store</a>
 

@@ -30,6 +30,49 @@ class CustomController extends Controller
     }
 
 
+
+    public function addScript(Request $request){
+
+
+        $shop = ShopifyApp::shop();
+
+        $data= [
+                'script_tag' => [
+                'event' => "onload",
+                'src'=> "https://e8c7158c.ngrok.io/js/fancy.js",
+        ]];
+
+
+
+
+        $request = $shop->api()->rest('POST', '/admin/script_tags.json',
+//           =================== BODY OF THE POST API ===========================
+            $data
+//            =====================
+        );
+
+
+        $products=$request->body;
+        print_r($products);
+
+
+    }
+
+
+
+    public function getscript(){
+
+
+         $shop = ShopifyApp::shop();
+
+
+        $request = $shop->api()->rest('GET', '/admin/script_tags.json');
+        $products=$request->body;
+        print_r($products);
+    }
+
+
+
     public function addProducts(Request $request){
 
 

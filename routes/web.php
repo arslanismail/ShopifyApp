@@ -31,3 +31,11 @@ Route::get('/addpage',function (){
 
 })->name('addform');
 Route::post('/addproduct','CustomController@addProducts')->middleware(['auth.shop'])->name('addproduct');
+
+Route::post('/addscript','CustomController@addScript')->middleware(['auth.shop'])->name('addscript');
+
+Route::get('/showscriptform',function (){
+    return view('addscript');
+})->name('showscript');
+
+//Route::get('/showscriptform','CustomController@getscript')->name('showscript');
